@@ -8,6 +8,7 @@ public class MainActivity extends BaseImmersiveActivity
     protected void onInitUI()
     {
         setContentView(R.layout.activity_main);
+        
     }
 
     @Override
