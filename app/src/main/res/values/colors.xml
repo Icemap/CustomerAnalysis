@@ -6,4 +6,6 @@
     <color name="colorWhite">#EEEEEE</color>
     <color name="colorIOSBlue">#007AFF</color>
     <color name="colorTitleBar">#64b4ff</color>
+    <color name="colorBlack">#000000</color>
+
 </resources>

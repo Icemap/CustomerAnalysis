@@ -11,70 +11,225 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+
+    <LinearLayout
+        android:id="@+id/ll_photo"
+        android:layout_below="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:layout_weight="1"
+            >
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                >
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp"
+                    android:text="@string/name"/>
+
+                <TextView
+                    android:id="@+id/tv_sex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp"
+                    android:text="@string/sex"
+                    android:layout_below="@+id/tv_name"/>
+
+                <TextView
+                    android:id="@+id/tv_age"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp"
+                    android:text="@string/age"
+                    android:layout_below="@+id/tv_sex"/>
+
+                <TextView
+                    android:id="@+id/tv_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp"
+                    android:text="@string/phone"
+                    android:layout_below="@+id/tv_age"/>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_photo"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/title_bar">
+        android:layout_below="@+id/ll_photo">
+        <TableLayout
+            android:id="@+id/push_table"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TableRow
+                android:layout_marginTop="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView android:text="时间"
+                          android:textSize="@dimen/table_text_size"
+                          android:background="@drawable/table_frame_gray"
+                          android:layout_width="@dimen/table_item1_width"
+                          android:layout_height="wrap_content" />
+                <TextView android:text="购买"
+                          android:textSize="@dimen/table_text_size"
+                          android:background="@drawable/table_frame_gray"
+                          android:layout_marginLeft="1dp"
+                          android:layout_width="@dimen/table_item2_width"
+                          android:layout_height="wrap_content" />
+                <TextView android:text="金额"
+                          android:textSize="@dimen/table_text_size"
+                          android:background="@drawable/table_frame_gray"
+                          android:layout_marginLeft="1dp"
+                          android:layout_width="@dimen/table_item3_width"
+                          android:layout_height="wrap_content" />
+                <TextView android:text="清单"
+                          android:textSize="@dimen/table_text_size"
+                          android:background="@drawable/table_frame_gray"
+                          android:layout_marginLeft="1dp"
+                          android:layout_width="@dimen/table_item4_width"
+                          android:layout_height="wrap_content" />
+            </TableRow>
 
-        <LinearLayout
-            android:id="@+id/ll_photo"
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:orientation="horizontal">
+            <TableRow
+                android:layout_marginTop="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tv1_1"
+                    android:text="时间"
+                    android:textSize="@dimen/table_text_size"
+                    android:background="@drawable/table_frame_gray"
+                    android:layout_width="@dimen/table_item1_width"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv1_2"
+                    android:text="购买"
+                          android:textSize="@dimen/table_text_size"
+                          android:background="@drawable/table_frame_gray"
+                          android:layout_marginLeft="1dp"
+                          android:layout_width="@dimen/table_item2_width"
+                          android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv1_3"
+                    android:text="金额"
+                          android:textSize="@dimen/table_text_size"
+                          android:background="@drawable/table_frame_gray"
+                          android:layout_marginLeft="1dp"
+                          android:layout_width="@dimen/table_item3_width"
+                          android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv1_4"
+                    android:text="清单"
+                          android:textSize="@dimen/table_text_size"
+                          android:background="@drawable/table_frame_gray"
+                          android:layout_marginLeft="1dp"
+                          android:layout_width="@dimen/table_item4_width"
+                          android:layout_height="wrap_content" />
+            </TableRow>
 
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="250dp"
-                android:layout_weight="1"
-                >
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    >
-                    <TextView
-                        android:id="@+id/tv_name"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_margin="5dp"
-                        android:text="@string/name"/>
+            <TableRow
+                android:layout_marginTop="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
 
-                    <TextView
-                        android:id="@+id/tv_sex"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_margin="5dp"
-                        android:text="@string/sex"
-                        android:layout_below="@+id/tv_name"/>
+                    android:id="@+id/tv2_1"
+                    android:text="时间"
+                          android:textSize="@dimen/table_text_size"
+                          android:background="@drawable/table_frame_gray"
+                          android:layout_width="@dimen/table_item1_width"
+                          android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv2_2"
+                    android:text="购买"
+                          android:textSize="@dimen/table_text_size"
+                          android:background="@drawable/table_frame_gray"
+                          android:layout_marginLeft="1dp"
+                          android:layout_width="@dimen/table_item2_width"
+                          android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv2_3"
+                    android:text="金额"
+                          android:textSize="@dimen/table_text_size"
+                          android:background="@drawable/table_frame_gray"
+                          android:layout_marginLeft="1dp"
+                          android:layout_width="@dimen/table_item3_width"
+                          android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv2_4"
+                    android:text="清单"
+                          android:textSize="@dimen/table_text_size"
+                          android:background="@drawable/table_frame_gray"
+                          android:layout_marginLeft="1dp"
+                          android:layout_width="@dimen/table_item4_width"
+                          android:layout_height="wrap_content" />
+            </TableRow>
 
-                    <TextView
-                        android:id="@+id/tv_age"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_margin="5dp"
-                        android:text="@string/age"
-                        android:layout_below="@+id/tv_sex"/>
-
-                    <TextView
-                        android:id="@+id/tv_phone"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_margin="5dp"
-                        android:text="@string/phone"
-                        android:layout_below="@+id/tv_age"/>
-                </RelativeLayout>
-            </RelativeLayout>
-
-            <ImageView
-                android:id="@+id/iv_photo"
-                android:layout_width="0dp"
-                android:layout_height="250dp"
-                android:layout_weight="1"
-                />
-        </LinearLayout>
+            <TableRow
+                android:layout_marginTop="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tv3_1"
+                    android:text="时间"
+                          android:textSize="@dimen/table_text_size"
+                          android:background="@drawable/table_frame_gray"
+                          android:layout_width="@dimen/table_item1_width"
+                          android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv3_2"
+                    android:text="购买"
+                          android:textSize="@dimen/table_text_size"
+                          android:background="@drawable/table_frame_gray"
+                          android:layout_marginLeft="1dp"
+                          android:layout_width="@dimen/table_item2_width"
+                          android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv3_3"
+                    android:text="金额"
+                          android:textSize="@dimen/table_text_size"
+                          android:background="@drawable/table_frame_gray"
+                          android:layout_marginLeft="1dp"
+                          android:layout_width="@dimen/table_item3_width"
+                          android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv3_4"
+                    android:text="清单"
+                          android:textSize="@dimen/table_text_size"
+                          android:background="@drawable/table_frame_gray"
+                          android:layout_marginLeft="1dp"
+                          android:layout_width="@dimen/table_item4_width"
+                          android:layout_height="wrap_content" />
+            </TableRow>
+        </TableLayout>
     </ScrollView>
 </RelativeLayout>

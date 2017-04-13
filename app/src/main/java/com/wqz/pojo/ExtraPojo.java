@@ -10,4 +10,5 @@ public class ExtraPojo
     public String age;
     public String phone;
     public String otherLabel;
+    public String bought;
 }
