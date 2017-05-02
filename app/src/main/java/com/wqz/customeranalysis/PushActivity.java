@@ -88,7 +88,7 @@ public class PushActivity extends BaseImmersiveActivity
         titleBar.setTitleColor(Color.WHITE);
         titleBar.setHeight(ScreenUtils.getScreenHeight(PushActivity.this) / 12);
         titleBar.setActionTextColor(Color.WHITE);
-        titleBar.setTitle("推送消息");
+        titleBar.setTitle("推荐方案");
     }
 
     private void setList(BoughtPojo[] boughtPojoList)
