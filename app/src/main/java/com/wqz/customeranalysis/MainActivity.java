@@ -1,6 +1,9 @@
 package com.wqz.customeranalysis;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.view.View;
 
 import com.wqz.base.BaseImmersiveActivity;
 import com.wqz.utils.ScreenUtils;
@@ -36,7 +39,16 @@ public class MainActivity extends BaseImmersiveActivity
     @Override
     protected void onSetListener()
     {
-
+        titleBar.addAction(new TitleBar.TextAction("退出账号")
+        {
+            @Override
+            public void performAction(View view)
+            {
+                MainActivity.this.getBaseApplication().isClear = true;
+                startActivity(new Intent(MainActivity.this,LoginActivity.class));
+                MainActivity.this.finish();
+            }
+        });
     }
 
     @Override

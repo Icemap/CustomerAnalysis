@@ -12,6 +12,8 @@ import cn.jpush.android.api.JPushInterface;
 
 public class BaseApplication extends Application
 {
+    public Boolean isClear = false;
+
     UserPojo userInfo = new UserPojo();
 
     public void setUserInfo(UserPojo userInfo)

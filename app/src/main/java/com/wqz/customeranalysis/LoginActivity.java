@@ -1,6 +1,7 @@
 package com.wqz.customeranalysis;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Log;
@@ -37,6 +38,21 @@ public class LoginActivity extends BaseImmersiveActivity
         etUsername = (EditText)findViewById(R.id.et_login_username);
         etPassword = (EditText)findViewById(R.id.et_login_password);
         btnLogin = (Button)findViewById(R.id.btn_login);
+
+        SharedPreferences sp=this.getPreferences(MODE_PRIVATE);
+
+        if(LoginActivity.this.getBaseApplication().isClear)
+        {
+            SharedPreferences.Editor editor = sp.edit();
+            editor.clear();
+            editor.commit();
+        }
+        else
+        {
+            String savedUserPojo = sp.getString("userPojo", "null");
+            if(!savedUserPojo.equals("null"))
+                onSetDataLogic(savedUserPojo);
+        }
     }
 
     @Override
@@ -48,17 +64,24 @@ public class LoginActivity extends BaseImmersiveActivity
     @Override
     protected void onSetDataLogic(Object data)
     {
-        String respons = (String)data;
-        respons = respons.replace("(","").replace(")","");
-        if(respons == null || respons.isEmpty())
+        String response = (String)data;
+        response = response.replace("(","").replace(")","");
+        if(response == null || response.isEmpty())
         {
             Toast.makeText(LoginActivity.this,"该用户不存在",Toast.LENGTH_SHORT).show();
             return;
         }
 
-        UserPojo userPojo = new Gson().fromJson(respons,UserPojo.class);
+        UserPojo userPojo = new Gson().fromJson(response,UserPojo.class);
         LoginActivity.this.getBaseApplication().setUserInfo(userPojo);
         setTag(userPojo.getResult().getStoreId() + "");
+
+        SharedPreferences sp = this.getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putString("userPojo", response);
+        editor.apply();
+        LoginActivity.this.getBaseApplication().isClear = false;
+
         //Jump
         startActivity(new Intent(LoginActivity.this,MainActivity.class));
         LoginActivity.this.finish();
