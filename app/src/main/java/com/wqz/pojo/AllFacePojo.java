@@ -19,6 +19,7 @@ public class AllFacePojo
     private String mode;
     private String camera_id;
     private String datetime;
+    public String last_list;
 
     public String getId()
     {
@@ -69,4 +70,5 @@ public class AllFacePojo
     {
         this.datetime = datetime;
     }
+
 }

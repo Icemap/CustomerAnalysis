@@ -17,11 +17,15 @@ import com.wqz.utils.ScreenUtils;
 import com.wqz.utils.StatusBarUtils;
 import com.wqz.view.TitleBar;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class AllFacePushActivity extends BaseImmersiveActivity
 {
     TitleBar titleBar;
     ImageView ivHead;
     TextView tvLastTime;
+    TextView tvRec1,tvRec2,tvRec3;
 
     @Override
     protected void onInitUI()
@@ -30,7 +34,9 @@ public class AllFacePushActivity extends BaseImmersiveActivity
         titleBar = (TitleBar)findViewById(R.id.title_bar);
         ivHead = (ImageView)findViewById(R.id.iv_head);
         tvLastTime = (TextView)findViewById(R.id.tv_last_time);
-
+        tvRec1 = (TextView)findViewById(R.id.tv_rec1);
+        tvRec2 = (TextView)findViewById(R.id.tv_rec2);
+        tvRec3 = (TextView)findViewById(R.id.tv_rec3);
         setTitleBarParm();
         onSetDataLogic(null);
     }
@@ -56,7 +62,22 @@ public class AllFacePushActivity extends BaseImmersiveActivity
         String json = intent.getStringExtra("json");
         AllFacePojo allFacePojo = new Gson().fromJson(json,AllFacePojo.class);
         Picasso.with(AllFacePushActivity.this).load(allFacePojo.getPic()).into(ivHead);
-        tvLastTime.setText("上次到店时间：" + allFacePojo.getDatetime());
+
+        Long[] timeStramp = new Gson().fromJson(allFacePojo.last_list, Long[].class);
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        if(timeStramp != null && timeStramp.length == 1)
+            tvRec1.setText(format.format(new Date(timeStramp[0])));
+        if(timeStramp != null && timeStramp.length == 2)
+        {
+            tvRec1.setText(format.format(new Date(timeStramp[0])));
+            tvRec2.setText(format.format(new Date(timeStramp[1])));
+        }
+        if(timeStramp != null && timeStramp.length == 3)
+        {
+            tvRec1.setText(format.format(new Date(timeStramp[0])));
+            tvRec2.setText(format.format(new Date(timeStramp[1])));
+            tvRec3.setText(format.format(new Date(timeStramp[2])));
+        }
     }
 
     private void setTitleBarParm()

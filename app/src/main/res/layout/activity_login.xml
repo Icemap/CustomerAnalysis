@@ -18,38 +18,48 @@
         <EditText
             android:id="@+id/et_login_username"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_marginTop="100dp"
             android:layout_marginStart="@dimen/activity_horizontal_margin"
             android:layout_marginEnd="@dimen/activity_horizontal_margin"
-            android:drawableLeft="@mipmap/login_img_username"
             android:background="@drawable/white_round_corner"
             android:padding="5dp"
             android:layout_marginBottom="5dp"
-            android:hint="@string/username_hint"/>
+            android:hint="@string/username_hint"
+            android:textColorHint="@color/colorWhiteTrans"
+            android:textColor="@color/colorWhite"
+            android:gravity="center"
+            />
 
         <EditText
             android:id="@+id/et_login_password"
             android:layout_below="@+id/et_login_username"
             android:inputType="textPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_marginStart="@dimen/activity_horizontal_margin"
             android:layout_marginEnd="@dimen/activity_horizontal_margin"
-            android:drawableLeft="@mipmap/login_img_password"
+            android:layout_marginTop="20dp"
             android:background="@drawable/white_round_corner"
             android:padding="5dp"
-            android:hint="@string/password_hint"/>
-    </RelativeLayout>
+            android:hint="@string/password_hint"
+            android:textColorHint="@color/colorWhiteTrans"
+            android:textColor="@color/colorWhite"
+            android:gravity="center"
+            />
 
-    <Button
-        android:id="@+id/btn_login"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="@string/login"
-        android:textSize="15sp"
-        android:textColor="@color/colorWhite"
-        android:background="@drawable/button_white2blue"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_alignParentBottom="true"/>
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/et_login_password"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/blue_round_corner"
+            android:text="@string/login"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"/>
+
+    </RelativeLayout>
 </RelativeLayout>

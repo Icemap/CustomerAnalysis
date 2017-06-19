@@ -22,9 +22,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="上次到店时间："
+        android:text="到店记录"
         android:textSize="16sp"
         android:layout_below="@+id/iv_head"
         android:layout_margin="10dp"/>
 
+    <TextView
+        android:id="@+id/tv_rec1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="XX-XX-XX XX:XX:XX"
+        android:textSize="16sp"
+        android:layout_below="@+id/tv_last_time"/>
+
+    <TextView
+        android:id="@+id/tv_rec2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="XX-XX-XX XX:XX:XX"
+        android:textSize="16sp"
+        android:layout_below="@+id/tv_rec1"/>
+
+    <TextView
+        android:id="@+id/tv_rec3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="XX-XX-XX XX:XX:XX"
+        android:textSize="16sp"
+        android:layout_below="@+id/tv_rec2"/>
 </RelativeLayout>

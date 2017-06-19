@@ -4,8 +4,11 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorWhite">#EEEEEE</color>
+    <color name="colorWhiteTrans">#88EEEEEE</color>
     <color name="colorIOSBlue">#007AFF</color>
     <color name="colorTitleBar">#64b4ff</color>
     <color name="colorBlack">#000000</color>
+    <color name="colorTrans">#00000000</color>
+    <color name="colorBtnBlue">#1585BF</color>
 
 </resources>
